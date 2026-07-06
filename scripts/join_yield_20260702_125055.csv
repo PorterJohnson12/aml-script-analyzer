@@ -1,0 +1,11 @@
+title,year,tmdb_id,matched_title,budget,revenue,roi,vote_average,vote_count,has_financials,has_reception,usable
+Ratatouille,2007,2062,Ratatouille,150000000,623726000,4.16,7.8,18581,True,True,True
+Coco,2017,354912,Coco,175000000,814641172,4.66,8.198,21069,True,True,True
+Encanto,2021,568124,Encanto,150000000,261292688,1.74,7.567,10243,True,True,True
+Inside Out,2015,150540,Inside Out,175000000,857611174,4.9,7.908,23552,True,True,True
+Wish,2023,1022796,Wish,175000000,254997360,1.46,6.22,1789,True,True,True
+Strange World,2022,877269,Strange World,180000000,73621640,0.41,6.229,1429,True,True,True
+Toy Story 2,1999,863,Toy Story 2,90000000,497375404,5.53,7.614,15019,True,True,True
+Toy Story 3,2010,10193,Toy Story 3,200000000,1067316101,5.34,7.811,15859,True,True,True
+Toy Story 4,2019,301528,Toy Story 4,175000000,1073841394,6.14,7.461,10666,True,True,True
+The Lighthouse,2019,503919,The Lighthouse,11000000,18262464,1.66,7.5,5576,True,True,True
