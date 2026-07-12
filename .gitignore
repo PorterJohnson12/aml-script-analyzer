@@ -18,5 +18,13 @@ ENV/
 # Data folder
 data/
 
-# M1P1 docs
+# docs
 docs/M1P1/
+docs/M2P2
+docs/extra-notes.md
+docs/assignments
+docs/qa-cheatsheet.md
+docs/notes-resolutions.md
+
+# src files
+src/outlier

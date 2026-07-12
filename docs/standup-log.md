@@ -48,3 +48,65 @@ Looking through the dataset more and evaluating the model, as well as nailing do
 
 **Blockers:** Are you facing any challenges or blockers? If none, write "None."
 None at the moment.
+
+## -------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------------
+
+## [Week 2 — Day 1] — [07/06/2026]
+
+**Worked on:** What did you actually work on today?
+We talked through the data and features, as well as what to look into to evaluate if this is doable in 5 weeks feature-wise.
+
+**Up next:** What are you working on in the next session?
+Next session I'm going to dive through everything with an LLM to examine the feasibility and what's doable features, and if they're able to be extracted.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+None.
+
+
+## [Week 2 — Day 2] — [07/07/2026]
+
+**Worked on:** What did you actually work on today?
+I talked with an LLM about the data, models, book, and scope. 
+
+**Up next:** What are you working on in the next session?
+Next session I'm continuing to go through the data and understand my uses and limitations.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+None.
+
+
+## [Week 2 — Day 3] — [07/08/2026]
+
+**Worked on:** What did you actually work on today?
+Worked more through the data, build scaffolding, and updated notes-resolutions.md
+
+**Up next:** What are you working on in the next session?
+Next session I'm going to further refine my data understanding and my week by week outline.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+None, just a lot of information to get around.
+
+
+## [Week 2 — Day 4] — [07/09/2026]
+
+**Worked on:** What did you actually work on today?
+Today we had check ins and looked over my project. We identified issues and gaps in data understanding. I believe I got too caught up in different paths of implementation that I didn't stop to look at what I had on a deeper level, which makes finding an implementation significantly more difficult. 
+
+**Up next:** What are you working on in the next session?
+Next session I'm diving deep into my data to really understand what I have. This way I'll be able to prepare for the presentation, and know if the data that I have is sufficent enough to move forward with the current plan or project at all.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+Nothing aside from what's been stated.
+
+
+## [Week 2 — Day 5] — [07/10/2026]
+
+**Worked on:** What did you actually work on today?
+Today I worked on and presented my data and plan for the next three weeks.
+
+**Up next:** What are you working on in the next session?
+There were aspects I wasn't entirely sure about, and next session will be diving deeper into parts of the plan to better explain them and document them clearly. Then I'm going to revise my schedule.md to reflect what needs to happen for the project.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+Nothing except for the current data and project planning this late in the week.

@@ -1,0 +1,29 @@
+# Outlier — PRO322 (Path B: modern stack, no USE / no old TRIPOD env)
+
+# --- core ---
+numpy
+pandas
+scikit-learn
+tqdm
+pyyaml
+
+# --- NLP / embeddings (replace Google USE with sentence-transformers) ---
+# Install a CUDA-matched torch build for your RTX 5070 Ti — see https://pytorch.org
+torch
+sentence-transformers
+transformers
+vaderSentiment          # fast baseline for scene value-charge (turns / escalation)
+
+# --- experiment tracking + notebooks ---
+mlflow
+jupyter
+nbformat
+matplotlib
+
+# --- serving / demo (Week 5) ---
+streamlit
+fastapi
+uvicorn
+
+# --- testing ---
+pytest
