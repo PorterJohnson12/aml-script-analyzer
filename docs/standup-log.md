@@ -110,3 +110,79 @@ There were aspects I wasn't entirely sure about, and next session will be diving
 
 **Blockers:** Are you facing any challenges or blockers? If none, write "None."
 Nothing except for the current data and project planning this late in the week.
+
+
+
+## [Week 3 — Day 1] — [07/13/2026]
+
+**Worked on:** What did you actually work on today?
+Today we had a 1 on 1 check in and talked about the models that I planned on training. We spoke about what's needed for this weeks presentation, as well as the model pipeline that I had worked out. Then we talked about the emotional detection model and how it detected emotions.
+
+**Up next:** What are you working on in the next session?
+Next session I'm going to get a test run done on a film and see what I can get out of it, potentially having to tune the McKee layer.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+None.
+
+
+## [Week 3 — Day 2] — [07/14/2026]
+
+**Worked on:** What did you actually work on today?
+Today I ran Die Hard through a test model to see what I got. It was able to detect the turning points pretty well, but I realized that the emotion was scoring the film as bad if it had negative emotion at the end, which isn't the principle at play. The emotion can be negative, and as long as the beginning was techinically positive, the value shift happened correctly. I can see that there are a couple aspects like that that need to be tuned and fixed.
+
+**Up next:** What are you working on in the next session?
+Tomorrow I'm going to try and finish the tuning for the layer and do a bigger test, hopefully running my MLFlow experiments, and see what results I can come away with. 
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+The current graphs and information are hard to read. I need to find a better way to show them so it's easier to work through the layer quicker.
+
+
+## [Week 3 — 1-on-1 Retrospective] — [07/15/2026]
+
+**What we discussed:** Briefly summarize the key topics covered in the check-in.
+We spoke about what point I was at relative to this week's assignments and presentation, as well as what needed to happen to not only satisfy deliverables, but also stay on track for the class. Main aspects we spoke about were deriving value from the emotions, potential routes to getting better value out of the emotions.
+
+**Feedback received:** What specific feedback or direction did the instructor give?
+I was told to look into the difference between emotions to see if we could find a stronger correlation, look at valence of the three scenes before and after TPs, and identifying real patterns that are both helpful for ML and business understanding. We also spoke about introducing emotion values into the scripts before running them through the LLM, to see if we're able to find anything with what emotions allign with TPs.
+
+**Action items:** What will you do differently or prioritize as a result?
+Look into difference betwewen valence, valnce for the three scenes before and after TPs, find out what magnetude is actually doing/looking at, FIND PATTERNS. We need business value, patterns that we can work from to provide business value AND use for ML, etc.
+
+**Reflection:** In one or two sentences — was there anything that surprised you or that you want to think more about?
+I definitely want to think more about what data I can put in, and if there's other ways I can potentially boost the signal with the emotional stuff, as well as getting valence done earlier in the pipeline to see if training the model like that DOES help.
+
+
+## [Week 3 — Day 3] — [07/15/2026]
+
+**Worked on:** What did you actually work on today?
+Today we had the 1 on 1 check in, and spoke a lot about the project. As far as work goes, I trained the initial model, and am seeing some relatively good results. However, it looks like I might be getting some issues, as it doesn't seem to line up TPs close with everything, but does with a couple films, making me think some might be overfit. I did however, thus far, find some good data for emotional patterns throughout a movie. This will need more testing though.
+
+**Up next:** What are you working on in the next session?
+Tomorrow I'm going to look further into the model and see what it's learning. Hopefully I'll be able to see if it's overfitting or if there's data leakage. I'd ideally like to find the main cause and retrain.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+No real challenges right now.
+
+
+## [Week 3 — Day 4] — [07/16/2026]
+
+**Worked on:** What did you actually work on today?
+Today I dug more into my model and training. Unfortunately I don't seem to be getting the best results. While the emotion valence is showing some good signs for sure, it's not doing great with TPs. I looked deeper into it today, and realized it appears to not be taking content into consideration, at least not nearly as strong as position. This is a big issue, as guessing the TP placement based off of scene position isn't a great identifier. 
+
+**Up next:** What are you working on in the next session?
+Next session I'm going to dive into why exactly this is more, look into some other models to test as my backbone, look into how I can imrpove the current model, and look at different data augmentation techniques.
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+The model not picking up on patterns I want it to pick up on. 
+
+
+## [Week 3 — Day 5] — [07/17/2026]
+
+**Worked on:** What did you actually work on today?
+Today I worked on my presentation, reading over my notes and where my model metrics stand compared to where I ideally wanted to be. We also presented our findings in class today and got some good feedback on things to look into. An important thing was hearing where projects like this could typically land for accuracy. But I still have issues that I don't want, and ideally would like to get as much accuracy as I can out of the model and project.
+
+**Up next:** What are you working on in the next session?
+Tomorrow I'm going to dive into the feedback from the presentation and test various things to see if I can get any improvements on my model metrics and get it to look for patterns in the text. This could involve data augmentation that I'd need to look into, testing another model, or even tuning the current one I have to see if I can get it past the noise band. 
+
+**Blockers:** Are you facing any challenges or blockers? If none, write "None."
+Aside from getting results that I'd like, nothing really blocking me. 
