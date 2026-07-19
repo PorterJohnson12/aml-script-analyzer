@@ -111,7 +111,8 @@ There were aspects I wasn't entirely sure about, and next session will be diving
 **Blockers:** Are you facing any challenges or blockers? If none, write "None."
 Nothing except for the current data and project planning this late in the week.
 
-
+## -------------------------------------------------------------------------------------------------------
+## -------------------------------------------------------------------------------------------------------
 
 ## [Week 3 — Day 1] — [07/13/2026]
 
