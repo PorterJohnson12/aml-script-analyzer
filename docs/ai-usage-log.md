@@ -55,8 +55,32 @@ with, prompts/context that worked well, and where AI output needed correction.
 
 ---
 
-## Week 3 — McKee-conformance layer + emotional arc
-*(to be filled)*
+## Week 3 — Trained TP experiments + the negative result
+
+**Tasks AI assisted with:**
+- Debugging the MLFlow filestore deprecation that blocked every run (`MlflowException: filesystem tracking backend is in maintenance mode`), then the Windows-specific `WinError 10022` where MLFlow's 4 default uvicorn workers can't inherit a listening socket. Both fixed; `--workers 1` is now in the docstring.
+- Building the experiment harness `scripts/run_experiments.py` — 6 trained configs + 3 untrained baselines, dev/gold split, per-run MLFlow logging, and a `results.json` dump so figures redraw without re-encoding 88 screenplays.
+- Writing the diagnostic controls that carry the whole report: `zeros_input` (bi-LSTM with its input zeroed) and `transformer_nopos` (Transformer with positional encoding removed). AI verified in code that the no-PE Transformer is genuinely permutation-invariant — shuffling scene order returns byte-identical logits — which is what makes it a valid content-only arm.
+- Adding sinusoidal positional encoding to `TPFinder` behind a `pos_encoding` flag so the position ablation could be measured inside one architecture.
+- Statistical tooling: `per_tp_pa_hits` and `bootstrap_ci` in `metrics.py`, so every number in the report carries a 95% interval instead of a bare point estimate.
+- The label-quality investigation — finding that 37% of silver movies assign 2+ turning points to the same scene set, then building `run_label_quality_cv.py` (5-fold CV over the 46 clean movies = 230 decisions) to test whether label noise was the blocker. It wasn't.
+- `scripts/make_week3_figures.py` (six figures) and the M3P1 deck (`build_deck*.js`, pptxgenjs, reusing the M2P2 palette).
+- `run_valence_shift_probe.py` — the Week-4 first look testing whether valence shifts more at turning points than at random scenes (it does: 1.27×, p = 0.004).
+
+**Prompts / context that worked well:**
+- **"What does the model score if you feed it nothing?"** This is the single most valuable thing I asked all term. Zeroing the input embeddings produced a model that ties my best trained model exactly (ΔPA = +0.000) and reframed the entire project from "my model works" to "my model learned position, not content."
+- **"How many independent decisions is my test set?"** Forced the realization that 15 gold movies × 5 TPs = 75 binary decisions, so the 95% CI is ±0.10 and every comparison I'd been making was inside the noise band.
+- **"Is this comparison fair?"** — asking AI to attack its own figure. It found that the 2×2 I was about to present crossed architectures (Transformer vs bi-LSTM) and therefore couldn't isolate either effect.
+- Asking for the *reproduction command* alongside every claim, which is why the report's numbers all rerun from the repo rather than living in a scratch buffer.
+
+**Where output needed correction / direction:**
+- **AI broke my training run with its own fix.** After migrating MLFlow from the filestore to SQLite, it renamed `MLRUNS_DIR` to `TRACKING_DB` but missed the reference in the closing print. All three experiments trained and logged, then the script died on the last line with a `NameError`. It grepped for stragglers only after I hit the crash — the check should have come with the rename.
+- **A figure caption asserted something the data didn't support.** It captioned the Die Hard chart "the model's predictions sit almost on top of the positional prior's." Checking the actual predictions, they differ by up to 21 scenes on that film. What's true is that the *averages across all 15 movies* converge. Corrected before it reached the deck.
+- **A chart title generalized from the wrong experiment.** `04_per_tp.png` was titled "content actively hurts the early turning points" — but that finding comes from the 230-decision silver CV, not the 15-movie gold data on that chart, where each bar is 15 decisions and the differences swing both ways. Retitled to what the chart actually shows.
+- **The headline claim was initially unreproducible.** The strongest result in the report (ΔPA = −0.093 on clean labels) was computed in a scratch script that lived nowhere. For a report whose entire thesis is rigor, that was unacceptable — it got ported to `scripts/run_label_quality_cv.py` and re-verified.
+- **Miscounted my own standup entries.** It reported "Days 1–4" for Week 3 because it truncated a grep at 20 lines; all five days were present. Small, but a reminder to check the tool output before trusting the summary built on it.
+
+*Pattern across all five: the failures were confident summaries that outran what had actually been verified. The fix that worked was asking for the check, not the conclusion.*
 
 ---
 
