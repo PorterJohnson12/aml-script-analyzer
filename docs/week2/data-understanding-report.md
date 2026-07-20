@@ -99,6 +99,33 @@ Computed from the 15 gold movies, TP position as fraction of total scenes:
 
 **These distributions are also the target for the "positional deviation" secondary signal** — the model's TP predictions can be compared to these expected positions to flag structurally unusual scripts.
 
+## 6.5 A stated limit — emotion polarity is a proxy for McKee value polarity
+
+McKee's "positive" and "negative" refer to which side of a value binary a character sits on
+— life/death, love/hate, freedom/slavery, justice/injustice, victory/defeat (Ch. 3 p. 34).
+His "positive" is the character being on the desirable side of a specific binary, not the
+audience feeling happy.
+
+Our pretrained emotion classifier (DistilRoBERTa) reads audience-side affective valence
+— how the *text* feels. These two signals correlate for most scenes but diverge in specific
+identifiable cases:
+
+- **Violent-but-victorious climaxes.** Die Hard's TP5 (Hans falling): scene text reads
+  strongly negative because the action is violent, but McKee's "victory/defeat" value at
+  stake for McClane flips from negative to positive.
+- **Melancholic wins.** Bittersweet reunions or Pyrrhic victories where the text tone
+  and the value flip disagree.
+- **Meaningful sacrifice.** A character willingly dying for a greater good reads
+  emotionally devastating but the McKee value ("meaningful sacrifice") ends positive.
+
+Every metric that touches valence — most visibly `alternation_compliance` — carries this
+proxy limitation. When the tool flags an ending as "VIOLATED" against McKee's alternation
+rule, the reading may be genuine OR it may be the emotion model misclassifying an
+affectively-dark-but-structurally-positive climax. We report the number honestly and label
+the caveat every time. The capstone would close this gap with LLM weak-labeling that asks
+"which value is at stake in this scene and which side does the character end on" — a
+question a context-aware language model can answer but DistilRoBERTa cannot.
+
 ## 7. EDA visualizations (in the notebook)
 
 Three visualizations live in `notebooks/01_data_validation.ipynb`, each with written interpretation:

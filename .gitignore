@@ -26,6 +26,19 @@ docs/extra-notes.md
 docs/assignments
 docs/qa-cheatsheet.md
 docs/notes-resolutions.md
+docs/notesw3.md
+docs/week3/oldslides
+docs/week3/present.md
+docs/week3/qa-prep.md
 
 # src files
-src/outlier
+
+
+# src/outlier
+
+# MLFlow
+mlflow.db
+
+# Node (pptxgenjs deck build dependency)
+node_modules/
+package-lock.json
